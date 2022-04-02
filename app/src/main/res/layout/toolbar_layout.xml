@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fitsSystemWindows="true"
+        app:elevation="10dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:background="@drawable/toolbar_background"
+        android:theme="@style/AppTheme">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="10"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:singleLine="true"
+                        android:text="ChewieMelodies"
+                        android:fontFamily="@font/chopin_script"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/profile_pic"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:elevation="12dp"
+                        app:cardCornerRadius="20dp"
+                        android:layout_centerInParent="true"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1.9">
+                        <ImageView
+                            android:layout_height="40dp"
+                            android:layout_width="match_parent"
+                            android:id="@+id/chewie_image"
+                            android:src="@drawable/chewie_logo"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true">
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout = "@layout/content_main"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
