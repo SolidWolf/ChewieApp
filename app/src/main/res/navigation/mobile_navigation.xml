@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.dango.chewieapp.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_song_queue"
+        android:name="com.dango.chewieapp.songqueue.SongQueueFragment"
+        android:label="@string/menu_song_queue"
+        tools:layout="@layout/fragment_song_queue" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.dango.chewieapp.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_song_list"
+        android:name="com.dango.chewieapp.songlist.SongListFragment"
+        android:label="@string/menu_song_list"
+        tools:layout="@layout/fragment_song_list" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.dango.chewieapp.slideshow
+package com.dango.chewieapp.songlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.dango.chewieapp.databinding.FragmentSlideshowBinding
+import com.dango.chewieapp.databinding.FragmentSongListBinding
 
 
-class SlideshowFragment : Fragment() {
+class SongListFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
-    private var _binding: FragmentSlideshowBinding? = null
+    private lateinit var slideshowViewModel: SongListViewModel
+    private var _binding: FragmentSongListBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,9 +26,9 @@ class SlideshowFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+            ViewModelProvider(this).get(SongListViewModel::class.java)
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentSongListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
