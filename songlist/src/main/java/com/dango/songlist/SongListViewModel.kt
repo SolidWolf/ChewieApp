@@ -1,13 +1,13 @@
-package com.dango.chewieapp.songqueue
+package com.dango.songlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SongQueueViewModel : ViewModel() {
+class SongListViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "This is slideshow Fragment"
     }
     val text: LiveData<String> = _text
 }

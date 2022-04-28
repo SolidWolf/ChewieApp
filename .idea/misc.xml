@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work Folder/ChewieApp2/SongQueue/src/main/res/layout/fragment_song_queue.xml" value="0.328125" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/drawer_item_selected_color.xml" value="0.2355" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/menu_icon.xml" value="0.4036458333333333" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/side_nav_bar.xml" value="0.590625" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/song_queue_icon.xml" value="0.3705" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/spotify_rounded_corners.xml" value="0.4036458333333333" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/toolbar_background.xml" value="0.492" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/youtube_button_round_corners.xml" value="0.4036458333333333" />
@@ -15,10 +17,12 @@
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/fragment_gallery.xml" value="0.5744791666666667" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/fragment_home.xml" value="0.5744791666666667" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/fragment_slideshow.xml" value="0.5744791666666667" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/fragment_song_queue.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/nav_header_main.xml" value="0.5744791666666667" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/toolbar_layout.xml" value="0.4336842105263158" />
-        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/menu/activity_main_drawer.xml" value="0.3255208333333333" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/menu/activity_main_drawer.xml" value="0.9" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/menu/main.xml" value="0.5744791666666667" />
+        <entry key="..\:/Work Folder/ChewieApp2/songlist/src/main/res/layout/fragment_song_list.xml" value="0.31476449275362317" />
       </map>
     </option>
   </component>

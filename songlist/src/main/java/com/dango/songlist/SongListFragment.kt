@@ -1,4 +1,4 @@
-package com.dango.chewieapp.songlist
+package com.dango.songlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.dango.chewieapp.databinding.FragmentSongListBinding
+import com.dango.songlist.databinding.FragmentSongListBinding
 
 
 class SongListFragment : Fragment() {

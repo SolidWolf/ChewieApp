@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_song_queue"
-        android:name="com.dango.chewieapp.songqueue.SongQueueFragment"
+        android:name="com.dango.songqueue.SongQueueFragment"
         android:label="@string/menu_song_queue"
         tools:layout="@layout/fragment_song_queue" />
 
     <fragment
         android:id="@+id/nav_song_list"
-        android:name="com.dango.chewieapp.songlist.SongListFragment"
+        android:name="com.dango.songlist.SongListFragment"
         android:label="@string/menu_song_list"
         tools:layout="@layout/fragment_song_list" />
 </navigation>
