@@ -40,4 +40,12 @@
         android:name="com.dango.myachievements.MyAchievementsFragment"
         android:label="@string/menu_my_achievements"
         tools:layout="@layout/fragment_my_achievements" />
+
+    <fragment
+        android:id="@+id/nav_commands"
+        android:name="com.dango.commands.CommandsFragment"
+        android:label="@string/menu_commands"
+        tools:layout="@layout/fragment_commands" />
+
+
 </navigation>

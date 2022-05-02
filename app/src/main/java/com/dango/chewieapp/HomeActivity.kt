@@ -48,7 +48,8 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_song_list,
                 R.id.nav_leaderboard,
                 R.id.nav_my_cards,
-                R.id.nav_my_achievements
+                R.id.nav_my_achievements,
+                R.id.nav_commands
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
