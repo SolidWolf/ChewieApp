@@ -21,5 +21,11 @@
         android:id="@+id/nav_song_list"
         android:name="com.dango.songlist.SongListFragment"
         android:label="@string/menu_song_list"
-        tools:layout="@layout/fragment_commands" />
+        tools:layout="@layout/fragment_song_list" />
+
+    <fragment
+        android:id="@+id/nav_leaderboard"
+        android:name="com.dango.leaderboard.LeaderboardFragment"
+        android:label="@string/menu_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
 </navigation>

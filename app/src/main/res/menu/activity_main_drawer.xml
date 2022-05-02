@@ -17,5 +17,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_song_list" />
 
+        <item
+            android:id="@+id/nav_leaderboard"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_leaderboard" />
+
     </group>
 </menu>
