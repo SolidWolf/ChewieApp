@@ -21,10 +21,16 @@
             android:id="@+id/nav_leaderboard"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_leaderboard" />
+
         <item
             android:id="@+id/nav_my_cards"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_my_cards" />
+
+        <item
+            android:id="@+id/nav_my_achievements"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_my_achievements" />
 
     </group>
 </menu>
