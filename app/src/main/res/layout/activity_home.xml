@@ -14,13 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/container"-->
-<!--        android:visibility="visible"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginTop="?android:attr/actionBarSize"/>-->
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

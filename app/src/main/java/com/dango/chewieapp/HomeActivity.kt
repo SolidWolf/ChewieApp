@@ -49,42 +49,6 @@ class HomeActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-//        Handler().postDelayed({
-//            navView.setNavigationItemSelectedListener{
-//
-//                when (it.itemId) {
-//                    R.id.nav_home -> {
-//                        clickedNavItem = R.id.nav_home
-//                        fragment = HomeFragment()
-//                    }
-//                    R.id.nav_song_queue -> {
-//                        clickedNavItem = R.id.nav_song_queue
-//                        fragment = SongQueueFragment()
-//                    }
-//                    R.id.nav_song_list -> {
-//                        clickedNavItem = R.id.nav_song_list
-//                        fragment = SongListFragment()
-//                    }
-//                }
-//
-//                // Closes the drawer, triggering the listener above
-//                drawerLayout.closeDrawer(GravityCompat.START)
-//                true
-//            }
-//        }, 2000)
-//
-//        drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
-//            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
-//            override fun onDrawerOpened(drawerView: View) {}
-//            override fun onDrawerStateChanged(newState: Int) {}
-//            override fun onDrawerClosed(drawerView: View) {
-//                fragment.let{
-//
-//                    supportFragmentManager.beginTransaction().replace(R.id.container, it).commit()
-//                }
-//            }
-//        })
-
 
 //        supportActionBar?.setHomeButtonEnabled(true)
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true)
