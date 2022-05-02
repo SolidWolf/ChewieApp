@@ -13,7 +13,7 @@ import com.dango.songlist.databinding.FragmentSongListBinding
 
 class SongListFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SongListViewModel
+    private lateinit var songListViewModel: SongListViewModel
     private var _binding: FragmentSongListBinding? = null
 
     // This property is only valid between onCreateView and
@@ -25,14 +25,14 @@ class SongListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
+        songListViewModel =
             ViewModelProvider(this).get(SongListViewModel::class.java)
 
         _binding = FragmentSongListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        songListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

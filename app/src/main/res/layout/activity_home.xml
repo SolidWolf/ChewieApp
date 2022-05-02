@@ -14,15 +14,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+<!--    <FrameLayout-->
+<!--        android:id="@+id/container"-->
+<!--        android:visibility="visible"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="?android:attr/actionBarSize"/>-->
+
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:paddingTop="50dp"
         android:layout_gravity="start"
+        android:background="@color/dark_background"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         app:itemShapeFillColor="@color/drawer_item_selected_color"
-        app:itemIconTint="#FF0000"
+        app:itemIconTint="@color/white"
         app:itemTextColor="#2196F3"/>
 </androidx.drawerlayout.widget.DrawerLayout>
