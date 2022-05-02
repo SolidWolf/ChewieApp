@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/layout/fragment_leaderboard.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/Leaderboard/src/main/res/layout/fragment_song_list.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/MyAchievements/src/main/res/layout/fragment_leaderboard.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/MyCards/src/main/res/layout/fragment_leaderboard.xml" value="0.42135416666666664" />
         <entry key="..\:/Work Folder/ChewieApp2/SongQueue/src/main/res/layout/fragment_song_queue.xml" value="0.328125" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/drawer_item_selected_color.xml" value="0.2355" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/menu_icon.xml" value="0.4036458333333333" />
