@@ -24,8 +24,27 @@
         android:fitsSystemWindows="true"
         android:theme="@style/NavigationView"
         app:headerLayout="@layout/nav_header_main"
+        app:drawerLayoutCornerSize="10dp"
+        app:dividerInsetStart="15dp"
+        app:dividerInsetEnd="15dp"
         app:menu="@menu/activity_main_drawer"
         app:itemShapeFillColor="@color/drawer_item_selected_color"
         app:itemIconTint="@color/white"
-        app:itemTextColor="#2196F3"/>
+        app:itemTextColor="#2196F3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/side_nav_bar_bottom" />
+
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
