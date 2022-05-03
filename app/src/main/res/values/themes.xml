@@ -29,4 +29,8 @@
         <item name="gapBetweenBars">6dp</item>
         <item name="thickness">4dp</item>
     </style>
+
+    <style name="NavigationView"  parent="Base.Theme.AppCompat">
+        <item name="android:listDivider">@color/mainactivity_background</item>
+    </style>
 </resources>
