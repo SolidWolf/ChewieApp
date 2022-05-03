@@ -14,27 +14,27 @@
             android:title="@string/menu_song_queue" />
         <item
             android:id="@+id/nav_song_list"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/song_list_icon"
             android:title="@string/menu_song_list" />
 
         <item
             android:id="@+id/nav_leaderboard"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/leaderboard_icon"
             android:title="@string/menu_leaderboard" />
 
         <item
             android:id="@+id/nav_my_cards"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/my_cards_icon"
             android:title="@string/menu_my_cards" />
 
         <item
             android:id="@+id/nav_my_achievements"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/achievement_icon"
             android:title="@string/menu_my_achievements" />
 
         <item
             android:id="@+id/nav_commands"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/commands_icon"
             android:title="@string/menu_commands" />
 
     </group>
