@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/layout/fragment_commands.xml" value="0.42135416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/layout/fragment_leaderboard.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/Leaderboard/src/main/res/layout/fragment_leaderboard.xml" value="0.2930253623188406" />
+        <entry key="..\:/Work Folder/ChewieApp2/Leaderboard/src/main/res/layout/fragment_song_list.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/MyAchievements/src/main/res/layout/fragment_leaderboard.xml" value="0.20491388044579534" />
+        <entry key="..\:/Work Folder/ChewieApp2/MyCards/src/main/res/layout/fragment_leaderboard.xml" value="0.42135416666666664" />
         <entry key="..\:/Work Folder/ChewieApp2/SongQueue/src/main/res/layout/fragment_song_queue.xml" value="0.328125" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/drawer_item_selected_color.xml" value="0.2355" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/ic_bar_notes.xml" value="0.3465" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/ic_home_icon.xml" value="0.3465" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.3465" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/ic_music_note.xml" value="0.3465" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/menu_icon.xml" value="0.4036458333333333" />
-        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/side_nav_bar.xml" value="0.590625" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/side_nav_bar.xml" value="0.25" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/song_queue_icon.xml" value="0.3705" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/spotify_rounded_corners.xml" value="0.4036458333333333" />
-        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/toolbar_background.xml" value="0.492" />
+        <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/toolbar_background.xml" value="0.25" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/drawable/youtube_button_round_corners.xml" value="0.4036458333333333" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Work Folder/ChewieApp2/app/src/main/res/layout/activity_main.xml" value="0.2595108695652174" />

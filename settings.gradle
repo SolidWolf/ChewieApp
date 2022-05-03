@@ -10,3 +10,7 @@ rootProject.name = "ChewieApp"
 include ':app'
 include ':songlist'
 include ':SongQueue'
+include ':Leaderboard'
+include ':MyCards'
+include ':MyAchievements'
+include ':Commands'

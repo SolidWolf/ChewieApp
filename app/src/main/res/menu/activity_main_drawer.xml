@@ -3,19 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        android:id="@+id/home_group">
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_icon"
             android:title="@string/menu_home" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/song_queue_group">
         <item
             android:id="@+id/nav_song_queue"
             android:icon="@drawable/song_queue_icon"
             android:title="@string/menu_song_queue" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/song_list_group">
         <item
             android:id="@+id/nav_song_list"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/song_list_icon"
             android:title="@string/menu_song_list" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/leaderboard_group">
+        <item
+            android:id="@+id/nav_leaderboard"
+            android:icon="@drawable/leaderboard_icon"
+            android:title="@string/menu_leaderboard" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/my_cards_group">
+        <item
+            android:id="@+id/nav_my_cards"
+            android:icon="@drawable/my_cards_icon"
+            android:title="@string/menu_my_cards" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/my_achievements_group">
+        <item
+            android:id="@+id/nav_my_achievements"
+            android:icon="@drawable/achievement_icon"
+            android:title="@string/menu_my_achievements" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/commands_group">
+        <item
+            android:id="@+id/nav_commands"
+            android:icon="@drawable/commands_icon"
+            android:title="@string/menu_commands" />
 
     </group>
 </menu>
