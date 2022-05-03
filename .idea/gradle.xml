@@ -14,9 +14,9 @@
             <option value="$PROJECT_DIR$/Leaderboard" />
             <option value="$PROJECT_DIR$/MyAchievements" />
             <option value="$PROJECT_DIR$/MyCards" />
+            <option value="$PROJECT_DIR$/SongList" />
             <option value="$PROJECT_DIR$/SongQueue" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/songlist" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -8,7 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ChewieApp"
 include ':app'
-include ':songlist'
+include ':SongList'
 include ':SongQueue'
 include ':Leaderboard'
 include ':MyCards'
