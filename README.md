@@ -14,4 +14,5 @@ The pictures below show how it looks currently looks and feels. I will post more
 The current Home screen
 
 ![image](https://user-images.githubusercontent.com/18683870/167265677-bf3168ba-0162-43bf-bcd7-77f2b9e2b488.png)
+
 The menu when expanded
