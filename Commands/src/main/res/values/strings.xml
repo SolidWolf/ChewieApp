@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="command">Command</string>
+    <string name="use_count">Use Count</string>
+    <string name="permissions_required">Permissions Required</string>
+</resources>

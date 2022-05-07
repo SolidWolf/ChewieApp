@@ -1,12 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF"
+    android:background="@color/dark_background"
+    android:orientation="vertical"
     tools:context=".CommandsFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:divider="@drawable/divider"
+        android:background="@drawable/tab_background"
+        android:showDividers="middle"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/commandTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@string/command"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:textStyle="italic|bold"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/useCountTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/use_count"
+            android:layout_weight="3"
+            android:textStyle="italic|bold"
+            android:gravity="center_horizontal"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/permissionsTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic|bold"
+            android:text="@string/permissions_required"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commandsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"/>
     <TextView
         android:id="@+id/text_slideshow"
         android:layout_width="match_parent"
@@ -20,4 +70,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
