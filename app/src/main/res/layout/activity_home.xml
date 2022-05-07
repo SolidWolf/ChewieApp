@@ -30,12 +30,13 @@
         app:menu="@menu/activity_main_drawer"
         app:itemShapeFillColor="@color/drawer_item_selected_color"
         app:itemIconTint="@color/white"
-        app:itemTextColor="#2196F3">
+        app:itemTextColor="@color/light_blue"
+        app:elevation="10dp"
+        android:outlineSpotShadowColor="@color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 

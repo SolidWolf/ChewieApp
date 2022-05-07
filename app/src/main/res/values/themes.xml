@@ -33,4 +33,5 @@
     <style name="NavigationView"  parent="Base.Theme.AppCompat">
         <item name="android:listDivider">@color/mainactivity_background</item>
     </style>
+
 </resources>

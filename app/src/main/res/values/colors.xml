@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="dark_background">#333333</color>
     <color name="mainactivity_background">#2B2929</color>
+    <color name="light_blue">#2196F3</color>
+    <color name="red">#FF0000</color>
 </resources>

@@ -3,8 +3,14 @@ package com.dango.chewieapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
+import android.view.Menu
 import android.view.View
+import android.widget.TextView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
+import androidx.core.view.forEach
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -21,6 +27,8 @@ import com.google.android.material.navigation.NavigationView
 class HomeActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var navView: NavigationView
+    private lateinit var drawerLayout: DrawerLayout
     private var clickedNavItem = 0
     private lateinit var fragment: Fragment
 
@@ -36,8 +44,9 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.menu_icon)
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        drawerLayout = binding.drawerLayout
+        navView = binding.navView
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -54,7 +63,6 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
 
 //        supportActionBar?.setHomeButtonEnabled(true)
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true)
