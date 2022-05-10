@@ -9,33 +9,60 @@
     android:theme="@style/EditTextHandleColor"
     tools:context=".CommandsFragment">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/commandEditText"
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <FrameLayout
+
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Search"
-            android:textColorHint="#63FFFFFF"
-            android:maxLines="2"
-            android:maxLength="39"
-            android:textCursorDrawable="@drawable/edit_text_cursor"
-            android:textColor="@color/white"
-            android:drawableLeft="@drawable/search_icon"
-            android:drawablePadding="10dp"
-            app:backgroundTint="@color/light_blue"/>
+            android:layout_weight="8">
+            <EditText
+                android:id="@+id/commandEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:textColorHint="#63FFFFFF"
+                android:maxLines="2"
+                android:maxLength="39"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                android:textColor="@color/white"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawablePadding="10dp"
+                app:backgroundTint="@color/light_blue"/>
 
-        <View
-            android:id="@+id/clearEditText"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/close_icon"
-            android:visibility="gone"/>
+            <View
+                android:id="@+id/clearEditText"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/close_icon"
+                android:visibility="gone"/>
 
-    </FrameLayout>
+        </FrameLayout>
+        <TextView
+
+            android:id="@+id/filtersTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:gravity="center_vertical"
+            android:paddingEnd="0dp"
+            android:text="@string/filters"
+            android:paddingStart="30dp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/light_blue"
+            android:shadowColor="#91ADFA"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20"
+            android:textSize="16sp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +84,11 @@
             android:gravity="center_horizontal"
             android:textStyle="italic|bold"
             android:textColor="@color/light_blue"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowRadius="10"
+            android:shadowDy="0"/>
 
         <TextView
             android:id="@+id/useCountTabTextView"
@@ -68,7 +99,11 @@
             android:textStyle="italic|bold"
             android:gravity="center_horizontal"
             android:textColor="@color/light_blue"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"/>
 
         <TextView
             android:id="@+id/permissionsTabTextView"
@@ -79,7 +114,11 @@
             android:layout_weight="4"
             android:gravity="center_horizontal"
             android:textColor="@color/light_blue"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

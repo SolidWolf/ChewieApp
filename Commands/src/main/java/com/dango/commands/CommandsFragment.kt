@@ -55,7 +55,7 @@ class CommandsFragment : Fragment() {
             CommandsModel("chewiebot", "test1", 3, false, "Text", "Viewer"),
             CommandsModel("chewieCoin", "test1", 40, false, "Text", "Moderator"),
             CommandsModel("cry", "test1", 600, false, "Alias", "Viewer"),
-            CommandsModel("dango", "test1", null, false, "Alias", "Viewer"),
+            CommandsModel("dango", "test2", null, false, "Alias", "Viewer"),
             CommandsModel("explainchews", "test1", 18, true, "Text", "Moderator"),
             CommandsModel("crying", "test1", 36518929, false, "Text", "Viewer")
         )
