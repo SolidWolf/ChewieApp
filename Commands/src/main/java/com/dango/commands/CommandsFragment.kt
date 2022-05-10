@@ -59,7 +59,7 @@ class CommandsFragment : Fragment() {
             CommandsModel("explainchews", "test1", 18, true, "Text", "Moderator"),
             CommandsModel("crying", "test1", 36518929, false, "Text", "Viewer")
         )
-        renderDatatoRecyclerView(commandsList!!)
+        renderDataToRecyclerView(commandsList!!)
         setUpObserver()
         onClickListeners()
 
@@ -70,7 +70,7 @@ class CommandsFragment : Fragment() {
             if (it.size > 0) {
                 binding.noDataFoundTextView.visibility = View.GONE
                 binding.commandsRecyclerView.visibility = View.VISIBLE
-                renderDatatoRecyclerView(it)
+                renderDataToRecyclerView(it)
             } else {
                 binding.commandsRecyclerView.visibility = View.GONE
                 binding.noDataFoundTextView.visibility = View.VISIBLE
@@ -80,8 +80,7 @@ class CommandsFragment : Fragment() {
 
     private fun onClickListeners() {
         binding.clearEditText.setOnClickListener {
-            val emptyString = ""
-            commandsEditText?.setText(emptyString)
+            commandsEditText?.text?.clear()
             binding.clearEditText.visibility = View.GONE
         }
         commandsEditText?.addTextChangedListener(textWatcher)
@@ -105,7 +104,7 @@ class CommandsFragment : Fragment() {
 
     }
 
-    private fun renderDatatoRecyclerView(commandsList: ArrayList<CommandsModel>) {
+    private fun renderDataToRecyclerView(commandsList: ArrayList<CommandsModel>) {
         commandsAdapter = CommandsAdapter(requireActivity(), commandsList, viewModel)
         commandsAdapter?.let {
             binding.commandsRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -123,7 +122,7 @@ class CommandsFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        renderDatatoRecyclerView(commandsList!!)
+        binding.commandEditText.text.clear()
     }
 
     override fun onDestroyView() {
