@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/dark_background"
     android:orientation="vertical"
+    android:theme="@style/EditTextHandleColor"
     tools:context=".CommandsFragment">
 
     <FrameLayout
@@ -26,6 +27,7 @@
             app:backgroundTint="@color/light_blue"/>
 
         <View
+            android:id="@+id/clearEditText"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="right|center_vertical"
@@ -83,6 +85,7 @@
         android:id="@+id/commandsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:nestedScrollingEnabled="false"/>
 
     <TextView
