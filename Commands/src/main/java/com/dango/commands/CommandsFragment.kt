@@ -94,9 +94,11 @@ class CommandsFragment : Fragment() {
         override fun afterTextChanged(s: Editable?) {
             if (s!!.isNotEmpty()) {
                 binding.clearEditText.visibility = View.VISIBLE
+                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon_white,0,0,0)
                 val filteredList = viewModel.filterData(s.toString(), commandsList)
                 viewModel.setFilterList(filteredList, commandsList, s)
             } else {
+                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon,0,0,0)
                 binding.clearEditText.visibility = View.GONE
                 viewModel.postFiliteredCommandsList(commandsList)
             }
