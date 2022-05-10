@@ -8,14 +8,31 @@
     android:orientation="vertical"
     tools:context=".CommandsFragment">
 
-    <EditText
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search"
-        android:textColorHint="#63FFFFFF"
-        android:textCursorDrawable="@drawable/edit_text_cursor"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/light_blue"/>
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/commandEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search"
+            android:textColorHint="#63FFFFFF"
+            android:maxLines="2"
+            android:maxLength="39"
+            android:textCursorDrawable="@drawable/edit_text_cursor"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/search_icon"
+            android:drawablePadding="10dp"
+            app:backgroundTint="@color/light_blue"/>
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/close_icon" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
