@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -52,7 +53,7 @@ class CommandsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         commandsList = arrayListOf(
-            CommandsModel("chewiebot", "test1", 3, false, "Text", "Viewer"),
+            CommandsModel("chewiebot", "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ We're going to raid {userfromargument} at twitch.tv/{userfromargument}, currently streaming {userlaststreaming}. Copy the raid messages! (!subraid, !raid2) chewieRaid ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", 3, false, "Text", "Viewer"),
             CommandsModel("chewieCoin", "test1", 40, false, "Text", "Moderator"),
             CommandsModel("cry", "test1", 600, false, "Alias", "Viewer"),
             CommandsModel("dango", "test2", null, false, "Alias", "Viewer"),
@@ -82,6 +83,9 @@ class CommandsFragment : Fragment() {
         binding.clearEditText.setOnClickListener {
             commandsEditText?.text?.clear()
             binding.clearEditText.visibility = View.GONE
+        }
+        binding.filtersTextView.setOnClickListener {
+            Toast.makeText(activity, "Coming Soon ™", Toast.LENGTH_SHORT).show()
         }
         commandsEditText?.addTextChangedListener(textWatcher)
     }

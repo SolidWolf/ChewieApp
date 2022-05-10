@@ -15,7 +15,6 @@
         android:text="bounce"
         android:textSize="20sp"
         android:textStyle="italic"
-        android:textIsSelectable="true"
         android:textColor="@color/white"
         android:layout_weight="3"/>
 
