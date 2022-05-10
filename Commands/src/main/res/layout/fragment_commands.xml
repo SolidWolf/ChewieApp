@@ -32,7 +32,8 @@
             android:layout_height="30dp"
             android:layout_gravity="right|center_vertical"
             android:layout_marginRight="20dp"
-            android:background="@drawable/close_icon" />
+            android:background="@drawable/close_icon"
+            android:visibility="gone"/>
 
     </FrameLayout>
 
@@ -89,16 +90,14 @@
         android:nestedScrollingEnabled="false"/>
 
     <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
+        android:id="@+id/noDataFoundTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
         android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="@color/light_blue"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="gone"/>
 </LinearLayout>

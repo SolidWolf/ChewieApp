@@ -2,9 +2,12 @@ package com.dango.commands
 
 import adapters.CommandsAdapter
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -16,9 +19,12 @@ import models.CommandsModel
 
 class CommandsFragment : Fragment() {
 
-    private lateinit var commandsViewModel: CommandsViewModel
+    private lateinit var viewModel: CommandsViewModel
     private var _binding: FragmentCommandsBinding? = null
     private var commandsAdapter: CommandsAdapter? = null
+    private var commandsEditText: EditText? = null
+    private var commandsList: ArrayList<CommandsModel>? = null
+    private var filteredData: ArrayList<CommandsModel>? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,14 +35,15 @@ class CommandsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        commandsViewModel =
+        viewModel =
             ViewModelProvider(this).get(CommandsViewModel::class.java)
 
         _binding = FragmentCommandsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        commandsViewModel.text.observe(viewLifecycleOwner, Observer {
+        commandsEditText = binding.commandEditText
+        val textView: TextView = binding.noDataFoundTextView
+        viewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
@@ -44,7 +51,7 @@ class CommandsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val commandsList: ArrayList<CommandsModel> = arrayListOf(
+        commandsList = arrayListOf(
             CommandsModel("chewiebot", "test1", 3, false, "Text", "Viewer"),
             CommandsModel("chewieCoin", "test1", 40, false, "Text", "Moderator"),
             CommandsModel("cry", "test1", 600, false, "Alias", "Viewer"),
@@ -52,30 +59,71 @@ class CommandsFragment : Fragment() {
             CommandsModel("explainchews", "test1", 18, true, "Text", "Moderator"),
             CommandsModel("crying", "test1", 36518929, false, "Text", "Viewer")
         )
-        renderDatatoRecyclerView(commandsList)
-
+        renderDatatoRecyclerView(commandsList!!)
+        setUpObserver()
         onClickListeners()
 
     }
 
-    private fun onClickListeners(){
+    private fun setUpObserver() {
+        viewModel.getFilteredData().observe(viewLifecycleOwner) {
+            if (it.size > 0) {
+                binding.noDataFoundTextView.visibility = View.GONE
+                binding.commandsRecyclerView.visibility = View.VISIBLE
+                renderDatatoRecyclerView(it)
+            } else {
+                binding.commandsRecyclerView.visibility = View.GONE
+                binding.noDataFoundTextView.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun onClickListeners() {
+        binding.clearEditText.setOnClickListener {
+            val emptyString = ""
+            commandsEditText?.setText(emptyString)
+            binding.clearEditText.visibility = View.GONE
+        }
+        commandsEditText?.addTextChangedListener(textWatcher)
+    }
+
+    private val textWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun afterTextChanged(s: Editable?) {
+            if (s!!.isNotEmpty()) {
+                binding.clearEditText.visibility = View.VISIBLE
+                val filteredList = viewModel.filterData(s.toString(), commandsList)
+                viewModel.setFilterList(filteredList, commandsList, s)
+            } else {
+                binding.clearEditText.visibility = View.GONE
+                viewModel.postFiliteredCommandsList(commandsList)
+            }
+        }
 
     }
 
-    private fun renderDatatoRecyclerView(commandsList: ArrayList<CommandsModel>){
-        commandsAdapter = CommandsAdapter(requireActivity(), commandsList, commandsViewModel)
-        commandsAdapter?.let{
+    private fun renderDatatoRecyclerView(commandsList: ArrayList<CommandsModel>) {
+        commandsAdapter = CommandsAdapter(requireActivity(), commandsList, viewModel)
+        commandsAdapter?.let {
             binding.commandsRecyclerView.layoutManager = LinearLayoutManager(context)
             binding.commandsRecyclerView.adapter = it
-            if(binding.commandsRecyclerView.itemDecorationCount == 0){
-                val rvDivider = activity?.let{ it1 ->
+            if (binding.commandsRecyclerView.itemDecorationCount == 0) {
+                val rvDivider = activity?.let { it1 ->
                     DividerItemDecoration(it1, DividerItemDecoration.VERTICAL)
                 }
-                if(rvDivider != null){
+                if (rvDivider != null) {
                     binding.commandsRecyclerView.addItemDecoration(rvDivider)
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        renderDatatoRecyclerView(commandsList!!)
     }
 
     override fun onDestroyView() {
