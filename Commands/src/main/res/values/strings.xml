@@ -3,6 +3,6 @@
     <string name="command">Command</string>
     <string name="use_count">Use Count</string>
     <string name="permissions_required">Permissions Required</string>
-    <string name="search"><i>Search command/permission/content</i></string>
+    <string name="search"><i>Search</i></string>
     <string name="filters"><u>Filters</u></string>
 </resources>

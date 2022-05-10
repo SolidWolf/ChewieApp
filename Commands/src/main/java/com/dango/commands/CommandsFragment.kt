@@ -53,12 +53,47 @@ class CommandsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         commandsList = arrayListOf(
-            CommandsModel("chewiebot", "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ We're going to raid {userfromargument} at twitch.tv/{userfromargument}, currently streaming {userlaststreaming}. Copy the raid messages! (!subraid, !raid2) chewieRaid ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬", 3, false, "Text", "Viewer"),
-            CommandsModel("chewieCoin", "test1", 40, false, "Text", "Moderator"),
-            CommandsModel("cry", "test1", 600, false, "Alias", "Viewer"),
-            CommandsModel("dango", "test2", null, false, "Alias", "Viewer"),
-            CommandsModel("explainchews", "test1", 18, true, "Text", "Moderator"),
-            CommandsModel("crying", "test1", 36518929, false, "Text", "Viewer")
+            CommandsModel(
+                "chewiebot",
+                "New and improved bot - www.chewiemelodies.com Convert your channel points into chews & check out our new dango cards and achievements. Bankheist, arena & dueling still exists. Ask our mods how to trade/recycle cards.",
+                3,
+                false,
+                "Text",
+                "Viewer"
+            ),
+            CommandsModel(
+                "chewieCoin",
+                "https://www.rally.io/creator/CHEWS/",
+                40,
+                false,
+                "Text",
+                "Moderator"
+            ),
+            CommandsModel("cry", "!crying", 600, false, "Alias", "Viewer"),
+            CommandsModel(
+                "!dangos",
+                "Those \"angry pig noses\" or \"plug\" plushies chewie has behind are actually lovely dangos, from the anime Clannad. Want to know how chewie got them? Check this clip where a man gets pounded by 60 dango plushies! https://youtu.be/Cyn5nqSsLYo",
+                null,
+                false,
+                "Text",
+                "Viewer"
+            ),
+            CommandsModel(
+                "explainchews",
+                "Chews are in-channel currency used for trading cards, minigames, etc. You can convert chew points to chews but not the other way around. Check !gainchews for how to get more chews.",
+                18,
+                true,
+                "Text",
+                "Moderator"
+            ),
+            CommandsModel(
+                "crying",
+                "Chewie has made {count} people cry chewieFeels",
+                36518929,
+                false,
+                "Text",
+                "Viewer"
+            )
         )
         renderDataToRecyclerView(commandsList!!)
         setUpObserver()
@@ -98,11 +133,21 @@ class CommandsFragment : Fragment() {
         override fun afterTextChanged(s: Editable?) {
             if (s!!.isNotEmpty()) {
                 binding.clearEditText.visibility = View.VISIBLE
-                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon_white,0,0,0)
+                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.search_icon_white,
+                    0,
+                    0,
+                    0
+                )
                 val filteredList = viewModel.filterData(s.toString(), commandsList)
                 viewModel.setFilterList(filteredList, commandsList, s)
             } else {
-                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(R.drawable.search_icon,0,0,0)
+                commandsEditText?.setCompoundDrawablesWithIntrinsicBounds(
+                    R.drawable.search_icon,
+                    0,
+                    0,
+                    0
+                )
                 binding.clearEditText.visibility = View.GONE
                 viewModel.postFiliteredCommandsList(commandsList)
             }

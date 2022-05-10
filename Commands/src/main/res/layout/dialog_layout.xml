@@ -6,6 +6,7 @@
     android:layout_margin="16dp"
     android:clipToPadding="false"
     android:clipChildren="false"
+    android:theme="@style/EditTextHandleColor"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
