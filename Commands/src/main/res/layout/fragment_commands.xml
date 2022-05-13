@@ -42,24 +42,7 @@
                 android:visibility="gone"/>
 
         </FrameLayout>
-<!--        <TextView-->
 
-<!--            android:id="@+id/filtersTextView"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="2"-->
-<!--            android:maxLines="1"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:paddingEnd="0dp"-->
-<!--            android:text="@string/filters"-->
-<!--            android:paddingStart="30dp"-->
-<!--            android:textStyle="italic|bold"-->
-<!--            android:textColor="@color/light_blue"-->
-<!--            android:shadowColor="#91ADFA"-->
-<!--            android:shadowDx="0"-->
-<!--            android:shadowDy="0"-->
-<!--            android:shadowRadius="20"-->
-<!--            android:textSize="16sp"/>-->
     </LinearLayout>
 
     <LinearLayout
