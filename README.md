@@ -16,3 +16,11 @@ The current Home screen
 ![image](https://user-images.githubusercontent.com/18683870/167265677-bf3168ba-0162-43bf-bcd7-77f2b9e2b488.png)
 
 The menu when expanded
+
+![image](https://user-images.githubusercontent.com/18683870/168388344-09c70717-cb5b-45f8-8295-751fd630a54e.png)
+ 
+The Commands Screen - Displays all the commands and, allows you to filter/search for specific items in the list
+
+![image](https://user-images.githubusercontent.com/18683870/168388584-2f2dc4c2-b759-4a6d-874d-645535a78f91.png)
+
+Pop up window for when a command is clicked from the list. Displays more information about the clicked command
