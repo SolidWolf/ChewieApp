@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="EditTextHandleColor">
+        <item name="colorControlActivated">@color/white</item>
+        <item name="android:textColorHighlight">@color/light_blue</item>
+    </style>
+
+</resources>

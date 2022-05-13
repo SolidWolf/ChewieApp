@@ -19,8 +19,7 @@
                 android:id="@+id/toolbar_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/AppTheme">
+                app:layout_scrollFlags="scroll|enterAlways">
 
                 <LinearLayout
 

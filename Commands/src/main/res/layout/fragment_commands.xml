@@ -1,23 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF"
+    android:background="@color/dark_background"
+    android:orientation="vertical"
+    android:theme="@style/EditTextHandleColor"
     tools:context=".CommandsFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/commandEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:textColorHint="#63FFFFFF"
+                android:maxLines="2"
+                android:maxLength="39"
+                android:textCursorDrawable="@drawable/edit_text_cursor"
+                android:textColor="@color/white"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawablePadding="10dp"
+                app:backgroundTint="@color/light_blue"/>
+
+            <View
+                android:id="@+id/clearEditText"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/close_icon"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:divider="@drawable/divider"
+        android:background="@drawable/tab_background"
+        android:showDividers="middle"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/commandTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@string/command"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:textStyle="italic|bold"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowRadius="10"
+            android:shadowDy="0"/>
+
+        <TextView
+            android:id="@+id/useCountTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/use_count"
+            android:layout_weight="3"
+            android:textStyle="italic|bold"
+            android:gravity="center_horizontal"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"/>
+
+        <TextView
+            android:id="@+id/permissionsTabTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic|bold"
+            android:text="@string/permissions_required"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:textColor="@color/light_blue"
+            android:textSize="16sp"
+            android:shadowColor="#3D63CC"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commandsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:nestedScrollingEnabled="false"/>
+
+    <TextView
+        android:id="@+id/noDataFoundTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
         android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="@color/light_blue"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:visibility="gone"/>
+</LinearLayout>
