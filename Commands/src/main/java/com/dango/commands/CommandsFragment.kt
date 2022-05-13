@@ -119,9 +119,9 @@ class CommandsFragment : Fragment() {
             commandsEditText?.text?.clear()
             binding.clearEditText.visibility = View.GONE
         }
-        binding.filtersTextView.setOnClickListener {
-            Toast.makeText(activity, "Coming Soon ™", Toast.LENGTH_SHORT).show()
-        }
+//        binding.filtersTextView.setOnClickListener {
+//            Toast.makeText(activity, "Coming Soon ™", Toast.LENGTH_SHORT).show()
+//        }
         commandsEditText?.addTextChangedListener(textWatcher)
     }
 
