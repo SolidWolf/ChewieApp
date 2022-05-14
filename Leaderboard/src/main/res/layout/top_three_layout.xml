@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_background"
+    tools:context=".LeaderboardFragment">
+
+    <LinearLayout
+        android:id="@+id/firstPlaceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/first_dango" />
+
+        <TextView
+            android:id="@+id/firstNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SW1FTUR"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/firstChewsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="105,800 chews"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondPlaceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:layout_toLeftOf="@id/firstPlaceLayout"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/second_dango" />
+
+        <TextView
+            android:id="@+id/secondNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="CYBERCIFRADO"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/secondChewsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="71,251 chews"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdPlaceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:layout_toRightOf="@id/firstPlaceLayout"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/third_dango" />
+
+        <TextView
+            android:id="@+id/thirdNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="JODDY_ODYODY"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/thirdChewsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70,882 chews"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>
