@@ -95,6 +95,7 @@
             android:text="JODDY_ODYODY"
             android:textColor="@color/white" />
 
+
         <TextView
             android:id="@+id/thirdChewsTextView"
             android:layout_width="wrap_content"
