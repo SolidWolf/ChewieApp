@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:background="@color/dark_background"
-    tools:context=".LeaderboardFragment"
-    android:orientation="vertical">
+    tools:context=".LeaderboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/top_three_layout"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/leaderboardRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"/>
 
     <TextView
         android:id="@+id/text_slideshow"
@@ -27,4 +43,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
-</LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

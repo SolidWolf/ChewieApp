@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rankCircle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/white">
+
+        <TextView
+            android:id="@+id/rankTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/userBorderRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="5dp"
+        android:outlineSpotShadowColor="@color/white"
+        android:layout_toRightOf="@+id/rankCircle"
+        android:background="@drawable/round_rectangle">
+
+        <TextView
+            android:id="@+id/rankNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="25dp"
+            android:text="SolidWolfie"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/rankChewsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:text="100,100"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
