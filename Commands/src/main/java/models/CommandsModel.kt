@@ -1,6 +1,6 @@
 package models
 
-class CommandsModel(
+data class CommandsModel(
     val commandName: String,
     val content: String,
     val useCount: Int?,

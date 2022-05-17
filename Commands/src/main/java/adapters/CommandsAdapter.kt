@@ -14,11 +14,12 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.dango.commands.CommandsViewModel
 import com.dango.commands.R
+import models.CommandsApiModelItem
 import models.CommandsModel
 
 class CommandsAdapter(
     private var context: FragmentActivity,
-    private var commandsList: ArrayList<CommandsModel>,
+    private var commandsList: ArrayList<CommandsApiModelItem>,
     private var viewModel: CommandsViewModel
 ) : RecyclerView.Adapter<CommandsAdapter.ViewHolder>() {
     private var dName: TextView? = null
@@ -46,7 +47,7 @@ class CommandsAdapter(
         }
 
         holder.commandTextView.text = row.commandName
-        holder.permissionsTextView.text = row.permissionType
+        holder.permissionsTextView.text = viewModel.permissionType[row.minUserLevel]
         holder.itemView.setOnClickListener {
             callPopupDialog(context, row)
         }
@@ -54,7 +55,7 @@ class CommandsAdapter(
 
     override fun getItemCount(): Int = commandsList.size
 
-    private fun callPopupDialog(context: FragmentActivity, row: CommandsModel) {
+    private fun callPopupDialog(context: FragmentActivity, row: CommandsApiModelItem) {
         val dialog = Dialog(context)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.dialog_layout)
@@ -74,10 +75,10 @@ class CommandsAdapter(
         dDone = dialog.findViewById(R.id.doneButton)
     }
 
-    private fun setDataToViews(dialog: Dialog, row: CommandsModel) {
+    private fun setDataToViews(dialog: Dialog, row: CommandsApiModelItem) {
         dName?.text = row.commandName
-        dType?.text = row.commandType
-        dCooldown?.text = if(row.hasCooldown){
+        dType?.text = viewModel.commandType[row.type]
+        dCooldown?.text = if(row.useCooldown == 1 || row.useCooldown == true){
             "Yes"
         } else {
             "No"

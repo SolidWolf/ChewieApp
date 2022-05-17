@@ -4,10 +4,13 @@ import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import models.CommandsApiModelItem
 import models.CommandsModel
 
 class CommandsViewModel : ViewModel() {
-    private val filteredCommandsData = MutableLiveData<ArrayList<CommandsModel>>()
+    private val filteredCommandsData = MutableLiveData<ArrayList<CommandsApiModelItem>>()
+    val permissionType = mapOf<Int, String>(1 to "Viewer", 2 to "Subscriber", 3 to "Moderator", 4 to "Bot", 5 to "Admin", 6 to "Broadcaster")
+    val commandType = mapOf<Int, String>(0 to "Text", 1 to "Alias", 2 to "System")
     private val _text = MutableLiveData<String>().apply {
         value = "No Data Was Found"
     }
@@ -15,13 +18,13 @@ class CommandsViewModel : ViewModel() {
 
     fun filterData(
         searchedText:String,
-        data: ArrayList<CommandsModel>?
-    ): ArrayList<CommandsModel> {
-        var filteredList: ArrayList<CommandsModel> = ArrayList()
+        data: ArrayList<CommandsApiModelItem>?
+    ): ArrayList<CommandsApiModelItem> {
+        var filteredList: ArrayList<CommandsApiModelItem> = ArrayList()
         data?.forEach{
             if(it.commandName.lowercase().contains(searchedText.lowercase()) ||
-                    it.permissionType.lowercase().contains(searchedText.lowercase()) ||
-                    it.commandType.lowercase().contains(searchedText.lowercase()) ||
+                permissionType[it.minUserLevel]?.lowercase()?.contains(searchedText.lowercase()) == true ||
+                    commandType[it.type]?.lowercase()?.contains(searchedText.lowercase()) == true ||
                     it.content.lowercase().contains(searchedText.lowercase())){
                 filteredList.add(it)
             }
@@ -30,8 +33,8 @@ class CommandsViewModel : ViewModel() {
     }
 
     fun setFilterList(
-        filteredList: ArrayList<CommandsModel>,
-        data: ArrayList<CommandsModel>?,
+        filteredList: ArrayList<CommandsApiModelItem>,
+        data: ArrayList<CommandsApiModelItem>?,
         s: Editable
     ) {
         if(s.isNotEmpty()){
@@ -41,11 +44,11 @@ class CommandsViewModel : ViewModel() {
         }
     }
 
-    fun getFilteredData(): MutableLiveData<ArrayList<CommandsModel>>{
+    fun getFilteredData(): MutableLiveData<ArrayList<CommandsApiModelItem>>{
         return filteredCommandsData
     }
 
-    fun postFiliteredCommandsList(data: ArrayList<CommandsModel>?) {
+    fun postFiliteredCommandsList(data: ArrayList<CommandsApiModelItem>?) {
         filteredCommandsData.postValue(data)
     }
 }
