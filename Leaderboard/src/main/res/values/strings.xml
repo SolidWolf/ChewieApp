@@ -5,4 +5,13 @@
     <string name="permissions_required">Permissions Required</string>
     <string name="search"><i>Search</i></string>
     <string name="filters"><u>Filters</u></string>
+    <string name="top_3_prizes">TOP 3 PRIZES</string>
+    <string name="_1st_place">1ST PLACE</string>
+    <string name="customized_dango">A customized dango box delivered to you</string>
+    <string name="vip_gold_for_a_month">VIP gold for a month</string>
+    <string name="pink_diamond_icon">Pink diamond icon in Twitch chat for a season</string>
+    <string name="_50_chews">50 $CHEWS</string>
+    <string name="_2nd_place">2ND PLACE</string>
+    <string name="_25_chews">25 $CHEWS</string>
+    <string name="_3rd_place">3RD PLACE</string>
 </resources>
