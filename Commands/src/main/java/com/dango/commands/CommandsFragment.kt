@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dango.commands.databinding.FragmentCommandsBinding
+import kotlinx.coroutines.runBlocking
 import models.CommandsApiModelItem
 import models.CommandsModel
 import retrofit2.Call
@@ -60,83 +61,22 @@ class CommandsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        commandsList = arrayListOf(
-//            CommandsModel(
-//                "chewiebot",
-//                "New and improved bot - www.chewiemelodies.com Convert your channel points into chews & check out our new dango cards and achievements. Bankheist, arena & dueling still exists. Ask our mods how to trade/recycle cards.",
-//                3,
-//                false,
-//                "Text",
-//                "Viewer"
-//            ),
-//            CommandsModel(
-//                "chewieCoin",
-//                "https://www.rally.io/creator/CHEWS/",
-//                40,
-//                false,
-//                "Text",
-//                "Moderator"
-//            ),
-//            CommandsModel("cry", "!crying", 600, false, "Alias", "Viewer"),
-//            CommandsModel(
-//                "!dangos",
-//                "Those \"angry pig noses\" or \"plug\" plushies chewie has behind are actually lovely dangos, from the anime Clannad. Want to know how chewie got them? Check this clip where a man gets pounded by 60 dango plushies! https://youtu.be/Cyn5nqSsLYo",
-//                null,
-//                false,
-//                "Text",
-//                "Viewer"
-//            ),
-//            CommandsModel(
-//                "explainchews",
-//                "Chews are in-channel currency used for trading cards, minigames, etc. You can convert chew points to chews but not the other way around. Check !gainchews for how to get more chews.",
-//                18,
-//                true,
-//                "Text",
-//                "Moderator"
-//            ),
-//            CommandsModel(
-//                "crying",
-//                "Chewie has made {count} people cry chewieFeels",
-//                36518929,
-//                false,
-//                "Text",
-//                "Viewer"
-//            )
-//        )
-//        renderDataToRecyclerView(commandsList!!)
-        setUpObserver()
-        onClickListeners()
+
         getCommandsList()
+        setUpObserver()
+//        renderDataToRecyclerView(commandsList!!)
+        onClickListeners()
 
     }
 
     private fun getCommandsList() {
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(CommandsApiInterface::class.java)
-        val retrofitData = retrofitBuilder.getCommandsList()
-        retrofitData.enqueue(object : Callback<List<CommandsApiModelItem>?> {
-            override fun onResponse(
-                call: Call<List<CommandsApiModelItem>?>,
-                response: Response<List<CommandsApiModelItem>?>
-            ) {
-                commandsList = response.body()!! as ArrayList<CommandsApiModelItem>
-                renderDataToRecyclerView(commandsList!!)
-            }
-
-            override fun onFailure(call: Call<List<CommandsApiModelItem>?>, t: Throwable) {
-                Log.d("API FAILED", t.message!!)
-                Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
-            }
-        })
-
+        viewModel.getCommandsList()
     }
 
     private fun setUpObserver() {
         viewModel.getFilteredData().observe(viewLifecycleOwner) {
-            if (it.size > 0) {
+            commandsList = it
+            if (it != null && it.size > 0) {
                 binding.noDataFoundTextView.visibility = View.GONE
                 binding.commandsRecyclerView.visibility = View.VISIBLE
                 renderDataToRecyclerView(it)
@@ -183,7 +123,7 @@ class CommandsFragment : Fragment() {
                     0
                 )
                 binding.clearEditText.visibility = View.GONE
-                viewModel.postFiliteredCommandsList(commandsList)
+                viewModel.postFilteredCommandsList(commandsList)
             }
         }
 
