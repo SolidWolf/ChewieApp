@@ -17,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CommandsViewModel : ViewModel() {
     private val filteredCommandsData = MutableLiveData<ArrayList<CommandsApiModelItem>>()
+    private var data: ArrayList<CommandsApiModelItem>? = null
     val permissionType = mapOf<Int, String>(1 to "Viewer", 2 to "Subscriber", 3 to "Moderator", 4 to "Bot", 5 to "Admin", 6 to "Broadcaster")
     val commandType = mapOf<Int, String>(0 to "Text", 1 to "Alias", 2 to "System")
 
@@ -28,30 +29,6 @@ class CommandsViewModel : ViewModel() {
         value = "No Data Was Found"
     }
     val text: LiveData<String> = _text
-
-    fun getCommandsList() {
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(CommandsApiInterface::class.java)
-        val retrofitData = retrofitBuilder.getCommandsList()
-        retrofitData.enqueue(object : Callback<List<CommandsApiModelItem>?> {
-            override fun onResponse(
-                call: Call<List<CommandsApiModelItem>?>,
-                response: Response<List<CommandsApiModelItem>?>
-            ) {
-                filteredCommandsData.postValue(response.body()!! as ArrayList<CommandsApiModelItem>)
-//                commandsList = response.body()!! as ArrayList<CommandsApiModelItem>
-//                renderDataToRecyclerView(commandsList!!)
-            }
-
-            override fun onFailure(call: Call<List<CommandsApiModelItem>?>, t: Throwable) {
-                Log.d("API FAILED", t.message!!)
-//                Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
-            }
-        })
-    }
 
     fun filterData(
         searchedText:String,
@@ -79,6 +56,10 @@ class CommandsViewModel : ViewModel() {
         } else {
             filteredCommandsData.postValue(data)
         }
+    }
+
+    fun getData(): ArrayList<CommandsApiModelItem>? {
+        return data
     }
 
     fun getFilteredData(): MutableLiveData<ArrayList<CommandsApiModelItem>>{

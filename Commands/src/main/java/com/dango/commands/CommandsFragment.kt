@@ -11,16 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dango.commands.databinding.FragmentCommandsBinding
-import kotlinx.coroutines.runBlocking
 import models.CommandsApiModelItem
-import models.CommandsModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,6 +32,7 @@ class CommandsFragment : Fragment() {
     private var commandsEditText: EditText? = null
     private var commandsList: ArrayList<CommandsApiModelItem>? = null
     private var filteredData: ArrayList<CommandsApiModelItem>? = null
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -64,18 +62,35 @@ class CommandsFragment : Fragment() {
 
         getCommandsList()
         setUpObserver()
-//        renderDataToRecyclerView(commandsList!!)
         onClickListeners()
-
     }
 
-    private fun getCommandsList() {
-        viewModel.getCommandsList()
+    fun getCommandsList() {
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+            .create(CommandsApiInterface::class.java)
+        val retrofitData = retrofitBuilder.getCommandsList()
+        retrofitData.enqueue(object : Callback<List<CommandsApiModelItem>?> {
+            override fun onResponse(
+                call: Call<List<CommandsApiModelItem>?>,
+                response: Response<List<CommandsApiModelItem>?>
+            ) {
+                commandsList = response.body()!! as ArrayList<CommandsApiModelItem>
+
+                viewModel.postFilteredCommandsList(commandsList)
+            }
+
+            override fun onFailure(call: Call<List<CommandsApiModelItem>?>, t: Throwable) {
+                Log.d("API FAILED", t.message!!)
+            }
+        })
     }
+
 
     private fun setUpObserver() {
         viewModel.getFilteredData().observe(viewLifecycleOwner) {
-            commandsList = it
             if (it != null && it.size > 0) {
                 binding.noDataFoundTextView.visibility = View.GONE
                 binding.commandsRecyclerView.visibility = View.VISIBLE
@@ -93,9 +108,7 @@ class CommandsFragment : Fragment() {
             commandsEditText?.text?.clear()
             binding.clearEditText.visibility = View.GONE
         }
-//        binding.filtersTextView.setOnClickListener {
-//            Toast.makeText(activity, "Coming Soon ™", Toast.LENGTH_SHORT).show()
-//        }
+
         commandsEditText?.addTextChangedListener(textWatcher)
     }
 
