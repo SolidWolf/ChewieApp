@@ -54,7 +54,11 @@
                     android:layout_weight="8"
                     android:text="Has cooldown: "
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:shadowColor="#3D63CC"
+                    android:shadowDx="0"
+                    android:shadowRadius="10"
+                    android:shadowDy="0"/>
 
                 <TextView
                     android:id="@+id/coolDownTextView"
@@ -82,7 +86,11 @@
                     android:layout_weight="8"
                     android:text="Type:"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:shadowColor="#3D63CC"
+                    android:shadowDx="0"
+                    android:shadowRadius="10"
+                    android:shadowDy="0"/>
 
                 <TextView
                     android:id="@+id/commandTypeTextView"
@@ -104,7 +112,11 @@
                 android:text="Content:"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:shadowColor="#3D63CC"
+                android:shadowDx="0"
+                android:shadowRadius="10"
+                android:shadowDy="0"/>
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
