@@ -9,17 +9,23 @@
     android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".LeaderboardFragment">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_background"
-        android:elevation="1dp">
-        <RelativeLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="1dp"
+        android:outlineAmbientShadowColor="@color/dark_background"
+        android:outlineSpotShadowColor="@color/dark_background">
+
+        <FrameLayout
             android:id="@+id/seasonDropdown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/top_prizes_background">
@@ -41,8 +47,7 @@
                 android:id="@+id/expandIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical|right"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/expand_arrow" />
 
@@ -50,31 +55,42 @@
                 android:id="@+id/collapseIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/collapse_arrow"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical|right"
                 android:layout_marginEnd="10dp"
-                android:visibility="gone"/>
-        </RelativeLayout>
+                android:background="@drawable/collapse_arrow"
+                android:visibility="gone" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/seasonMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seasonDropdown"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seasonRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/seasonRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false"
-        android:layout_gravity="center"
-        android:elevation="1dp"
-        android:visibility="gone"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="20dp">
 
@@ -96,7 +112,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
 
 
     </androidx.core.widget.NestedScrollView>

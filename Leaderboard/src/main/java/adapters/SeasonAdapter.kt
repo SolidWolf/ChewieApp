@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.dango.leaderboard.LeaderboardFragment
@@ -15,7 +17,7 @@ class SeasonAdapter(
     private var requireActivity: FragmentActivity,
     private var seasonsList: ArrayList<String>,
     private var selectedSeasonTextView: TextView,
-    private var seasonRecyclerView: RecyclerView,
+    private var seasonMenu: LinearLayout,
     private var collapseIcon: ImageView,
     private var expandIcon: ImageView
 ) : RecyclerView.Adapter<SeasonAdapter.ViewHolder>() {
@@ -30,7 +32,7 @@ class SeasonAdapter(
         holder.seasonTextView.text = row
         holder.seasonTextView.setOnClickListener {
             selectedSeasonTextView.text = row
-            seasonRecyclerView.visibility = View.GONE
+            seasonMenu.visibility = View.GONE
             collapseIcon.visibility = View.GONE
             expandIcon.visibility = View.VISIBLE
             LeaderboardFragment.isSeasonsExpanded = !LeaderboardFragment.isSeasonsExpanded

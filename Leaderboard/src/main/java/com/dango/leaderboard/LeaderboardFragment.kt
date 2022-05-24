@@ -7,11 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.dango.leaderboard.databinding.FragmentLeaderboardBinding
 import models.LeaderboardModel
 
@@ -74,7 +75,7 @@ class LeaderboardFragment : Fragment() {
 
         onClickListeners()
 
-        renderDataToSeasonsRecyclerView(seasonsList, binding.selectedSeasonTextView, binding.seasonRecyclerView, binding.collapseIcon, binding.expandIcon)
+        renderDataToSeasonsRecyclerView(seasonsList, binding.selectedSeasonTextView, binding.seasonMenu, binding.collapseIcon, binding.expandIcon)
         renderDataToLeaderboardRecyclerView(startColorArray, endColorArray, rankList)
 
     }
@@ -82,11 +83,11 @@ class LeaderboardFragment : Fragment() {
     private fun onClickListeners() {
         binding.seasonDropdown.setOnClickListener {
             if(!isSeasonsExpanded){
-                binding.seasonRecyclerView.visibility = View.VISIBLE
+                binding.seasonMenu.visibility = View.VISIBLE
                 binding.expandIcon.visibility = View.GONE
                 binding.collapseIcon.visibility = View.VISIBLE
             } else {
-                binding.seasonRecyclerView.visibility = View.GONE
+                binding.seasonMenu.visibility = View.GONE
                 binding.expandIcon.visibility = View.VISIBLE
                 binding.collapseIcon.visibility = View.GONE
             }
@@ -109,15 +110,29 @@ class LeaderboardFragment : Fragment() {
     private fun renderDataToSeasonsRecyclerView(
         seasonsList: ArrayList<String>,
         selectedSeasonTextView: TextView,
-        seasonRecyclerView: RecyclerView,
+        seasonMenu: LinearLayout,
         collapseIcon: ImageView,
         expandIcon: ImageView
     ) {
-        seasonsAdapter = SeasonAdapter(requireActivity(), seasonsList, selectedSeasonTextView, seasonRecyclerView, collapseIcon, expandIcon)
+        seasonsAdapter = SeasonAdapter(requireActivity(), seasonsList, selectedSeasonTextView, seasonMenu, collapseIcon, expandIcon)
         seasonsAdapter?.let {
             binding.seasonRecyclerView.layoutManager = LinearLayoutManager(context)
             binding.seasonRecyclerView.adapter = it
         }
+
+        if (binding.seasonRecyclerView.itemDecorationCount == 0) {
+            val rvDivider = activity?.let { it1 ->
+                DividerItemDecoration(it1, DividerItemDecoration.VERTICAL)
+            }
+            if (rvDivider != null) {
+                binding.seasonRecyclerView.addItemDecoration(rvDivider)
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        isSeasonsExpanded = false
     }
 
     override fun onDestroyView() {

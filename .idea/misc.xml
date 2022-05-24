@@ -8,17 +8,23 @@
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Commands/src/main/res/layout/command_layout.xml" value="0.575" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Commands/src/main/res/layout/dialog_layout.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Commands/src/main/res/layout/fragment_commands.xml" value="0.32760416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/border.xml" value="0.329" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/circle.xml" value="0.329" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/collapse_arrow.xml" value="0.5675" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/expand_arrow.xml" value="0.5675" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/round_rectangle.xml" value="0.329" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/drawable/top_prizes_background.xml" value="0.485" />
-        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/fragment_leaderboard.xml" value="0.4932975871313673" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/fragment_leaderboard.xml" value="0.3078805677924621" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/rank_layout.xml" value="0.24909420289855072" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/seasons_item_layout.xml" value="0.5739583333333333" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/top_prizes_layout.xml" value="0.5498188405797102" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/Leaderboard/src/main/res/layout/top_three_layout.xml" value="0.67" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/activity_home.xml" value="0.32760416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/activity_main.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/content_main.xml" value="0.32760416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/fragment_home.xml" value="0.32760416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/nav_header_main.xml" value="0.32760416666666664" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/toolbar_layout.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/drawable/close_icon.xml" value="0.398" />
         <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/drawable/divider.xml" value="0.33" />
         <entry key="..\:/Work Folder/ChewieApp2/Commands/src/main/res/drawable/edit_text_base_line.xml" value="0.33" />
