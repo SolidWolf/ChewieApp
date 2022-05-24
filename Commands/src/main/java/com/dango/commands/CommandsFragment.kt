@@ -78,6 +78,7 @@ class CommandsFragment : Fragment() {
                 response: Response<List<CommandsApiModelItem>?>
             ) {
                 commandsList = response.body()!! as ArrayList<CommandsApiModelItem>
+                commandsList?.sortBy { it.commandName }
 
                 viewModel.postFilteredCommandsList(commandsList)
             }
