@@ -1,16 +1,17 @@
 package com.dango.leaderboard
 
 import adapters.LeaderboardAdapter
+import adapters.SeasonAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dango.leaderboard.databinding.FragmentLeaderboardBinding
 import models.LeaderboardModel
 
@@ -23,6 +24,12 @@ class LeaderboardFragment : Fragment() {
     private var endColorArray: ArrayList<String> = ArrayList()
     private var rankList: ArrayList<LeaderboardModel> = ArrayList()
     private var leaderboardAdapter: LeaderboardAdapter? = null
+    private var seasonsAdapter: SeasonAdapter? = null
+    private var seasonsList: ArrayList<String> = ArrayList()
+    companion object{
+
+        var isSeasonsExpanded = false
+    }
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -42,7 +49,7 @@ class LeaderboardFragment : Fragment() {
 //        val textView: TextView = binding.
 //        songListViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
-//        })
+//        })x
         return root
     }
 
@@ -58,12 +65,36 @@ class LeaderboardFragment : Fragment() {
         rankList.add(LeaderboardModel("GENERALABE","42,350", 9))
         rankList.add(LeaderboardModel("KIRIMIHELLGREA","41,001", 10))
 
+        seasonsList.add("May 27, 2022")
+        seasonsList.add("Feb 27, 2022")
+        seasonsList.add("Nov 27, 2021")
 
-        renderDataToRecyclerView(startColorArray, endColorArray, rankList)
+
+        binding.selectedSeasonTextView.text = seasonsList[0]
+
+        onClickListeners()
+
+        renderDataToSeasonsRecyclerView(seasonsList, binding.selectedSeasonTextView, binding.seasonRecyclerView, binding.collapseIcon, binding.expandIcon)
+        renderDataToLeaderboardRecyclerView(startColorArray, endColorArray, rankList)
 
     }
 
-    private fun renderDataToRecyclerView(
+    private fun onClickListeners() {
+        binding.seasonDropdown.setOnClickListener {
+            if(!isSeasonsExpanded){
+                binding.seasonRecyclerView.visibility = View.VISIBLE
+                binding.expandIcon.visibility = View.GONE
+                binding.collapseIcon.visibility = View.VISIBLE
+            } else {
+                binding.seasonRecyclerView.visibility = View.GONE
+                binding.expandIcon.visibility = View.VISIBLE
+                binding.collapseIcon.visibility = View.GONE
+            }
+            isSeasonsExpanded = !isSeasonsExpanded
+        }
+    }
+
+    private fun renderDataToLeaderboardRecyclerView(
         startColorArray: ArrayList<String>,
         endColorArray: ArrayList<String>,
         rankList: ArrayList<LeaderboardModel>
@@ -72,6 +103,20 @@ class LeaderboardFragment : Fragment() {
         leaderboardAdapter?.let {
             binding.leaderboardRecyclerView.layoutManager = LinearLayoutManager(context)
             binding.leaderboardRecyclerView.adapter = it
+        }
+    }
+
+    private fun renderDataToSeasonsRecyclerView(
+        seasonsList: ArrayList<String>,
+        selectedSeasonTextView: TextView,
+        seasonRecyclerView: RecyclerView,
+        collapseIcon: ImageView,
+        expandIcon: ImageView
+    ) {
+        seasonsAdapter = SeasonAdapter(requireActivity(), seasonsList, selectedSeasonTextView, seasonRecyclerView, collapseIcon, expandIcon)
+        seasonsAdapter?.let {
+            binding.seasonRecyclerView.layoutManager = LinearLayoutManager(context)
+            binding.seasonRecyclerView.adapter = it
         }
     }
 
