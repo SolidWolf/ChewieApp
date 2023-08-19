@@ -65,7 +65,7 @@ class CommandsFragment : Fragment() {
         onClickListeners()
     }
 
-    fun getCommandsList() {
+    private fun getCommandsList() {
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
