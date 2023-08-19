@@ -40,11 +40,7 @@ class CommandsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val row = commandsList[position]
 
-        holder.countTextView.text = if(row.useCount != null){
-            row.useCount.toString()
-        } else{
-            ""
-        }
+        holder.countTextView.text = row.useCount.toString()
 
         holder.commandTextView.text = row.commandName
         holder.permissionsTextView.text = viewModel.permissionType[row.minUserLevel]

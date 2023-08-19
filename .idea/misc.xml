@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -25,7 +24,7 @@
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/SongQueue/src/main/res/drawable/edit_text_cursor.xml" value="0.2445" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/SongQueue/src/main/res/drawable/search_icon.xml" value="0.2445" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/SongQueue/src/main/res/drawable/tab_background.xml" value="0.2445" />
-        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/SongQueue/src/main/res/layout/fragment_song_queue.xml" value="0.33" />
+        <entry key="..\:/Work Folder/ChewieApp/ChewieApp/SongQueue/src/main/res/layout/fragment_song_queue.xml" value="0.25" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/activity_home.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/activity_main.xml" value="0.32760416666666664" />
         <entry key="..\:/Work Folder/ChewieApp/ChewieApp/app/src/main/res/layout/content_main.xml" value="0.32760416666666664" />
@@ -79,7 +78,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
